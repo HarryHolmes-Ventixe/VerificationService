@@ -6,6 +6,7 @@ builder.Services.AddControllers();
 builder.Services.AddOpenApi();
 
 builder.Services.AddMemoryCache();
+builder.Services.AddHttpClient();
 
 builder.Services.AddSingleton(x => new EmailClient(builder.Configuration["ACS:ConnectionString"]));
 builder.Services.AddScoped<IVerificationService, VerificationService>();
