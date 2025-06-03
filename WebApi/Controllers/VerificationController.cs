@@ -40,7 +40,7 @@ public class VerificationController(IVerificationService verificationService, IH
         {
             using var httpClient = _httpClientFactory.CreateClient();
             var confirmEmail = new { email = request.Email };
-            var authServiceUrl = "https://example.com/api/confirm-email"; // Replace with your AuthService URL
+            var authServiceUrl = "https://hh-ventixe-authservice-a2dke6b5hwezgpbe.swedencentral-01.azurewebsites.net/api/auth/confirm-email";
             var response = await httpClient.PostAsJsonAsync(authServiceUrl, confirmEmail);
 
             if (!response.IsSuccessStatusCode)
